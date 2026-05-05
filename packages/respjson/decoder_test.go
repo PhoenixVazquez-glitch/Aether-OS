@@ -3,8 +3,8 @@ package respjson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/thern.1-go/internal/apijson"
-	rj "github.com/stainless-sdks/thern.1-go/packages/respjson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apijson"
+	rj "github.com/PhoenixVazquez-glitch/Aether-OS/packages/respjson"
 	"reflect"
 	"testing"
 )

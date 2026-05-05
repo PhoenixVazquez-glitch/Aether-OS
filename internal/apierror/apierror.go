@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/stainless-sdks/thern.1-go/internal/apijson"
-	"github.com/stainless-sdks/thern.1-go/packages/respjson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apijson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/respjson"
 )
 
 // Error represents an error that originates from the API, i.e. when a request is

@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/thern.1-go/internal"
-	"github.com/stainless-sdks/thern.1-go/internal/apierror"
-	"github.com/stainless-sdks/thern.1-go/internal/apiform"
-	"github.com/stainless-sdks/thern.1-go/internal/apiquery"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apierror"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apiform"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {

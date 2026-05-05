@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/thern.1-go"
-	"github.com/stainless-sdks/thern.1-go/internal"
-	"github.com/stainless-sdks/thern.1-go/option"
+	"github.com/PhoenixVazquez-glitch/Aether-OS"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/option"
 )
 
 type closureTransport struct {

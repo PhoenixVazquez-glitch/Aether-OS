@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/stainless-sdks/thern.1-go/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
 )
 
 var encoders sync.Map // map[encoderEntry]encoderFunc

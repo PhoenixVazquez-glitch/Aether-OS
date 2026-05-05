@@ -3,8 +3,8 @@ package apijson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/thern.1-go/internal/apijson"
-	"github.com/stainless-sdks/thern.1-go/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apijson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
 	"reflect"
 	"testing"
 )

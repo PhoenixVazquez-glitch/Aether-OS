@@ -9,8 +9,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/stainless-sdks/thern.1-go/internal/requestconfig"
-	"github.com/stainless-sdks/thern.1-go/option"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/requestconfig"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/option"
 )
 
 // Client creates a struct with services and top level methods that help with

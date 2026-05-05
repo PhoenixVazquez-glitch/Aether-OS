@@ -8,11 +8,11 @@ import (
 	"net/http"
 	"slices"
 
-	"github.com/stainless-sdks/thern.1-go/internal/apijson"
-	shimjson "github.com/stainless-sdks/thern.1-go/internal/encoding/json"
-	"github.com/stainless-sdks/thern.1-go/internal/requestconfig"
-	"github.com/stainless-sdks/thern.1-go/option"
-	"github.com/stainless-sdks/thern.1-go/shared"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apijson"
+	shimjson "github.com/PhoenixVazquez-glitch/Aether-OS/internal/encoding/json"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/requestconfig"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/option"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/shared"
 )
 
 // Access to Petstore orders

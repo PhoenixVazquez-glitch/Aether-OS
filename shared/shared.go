@@ -6,9 +6,9 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/stainless-sdks/thern.1-go/internal/apijson"
-	"github.com/stainless-sdks/thern.1-go/packages/param"
-	"github.com/stainless-sdks/thern.1-go/packages/respjson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apijson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/respjson"
 )
 
 // aliased to make [param.APIUnion] private when embedding

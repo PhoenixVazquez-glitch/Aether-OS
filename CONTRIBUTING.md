@@ -41,7 +41,7 @@ To use a local version of this library from source in another project, edit the 
 directive. This can be done through the CLI with the following:
 
 ```sh
-$ go mod edit -replace github.com/stainless-sdks/thern.1-go=/path/to/thern.1-go
+$ go mod edit -replace github.com/PhoenixVazquez-glitch/Aether-OS=/path/to/Aether-OS
 ```
 
 ## Running tests
