@@ -1,348 +1,481 @@
-// ========================================================
-// AETHER OS + ALEJANDRO AI – SINGLE COPY-PASTE FULL PROJECT
-// 5x Better: Clean, Robust, Beautiful Stainless-Steel UI
-// Copy everything below this line into a new Flutter project
-// ========================================================
+# Thern 1 Go API Library
 
-// 1. First run these commands in terminal:
-flutter create aether_os --platforms=android,ios
-cd aether_os
-flutter pub add bridgefy isar isar_flutter_libs path_provider flutter_riverpod http speech_to_text
-flutter pub add -d isar_generator build_runner
-flutter pub get
+<!-- x-release-please-start-version -->
 
-// 2. Then replace/create the files with the code below
+<a href="https://pkg.go.dev/github.com/stainless-sdks/thern.1-go"><img src="https://pkg.go.dev/badge/github.com/stainless-sdks/thern.1-go.svg" alt="Go Reference"></a>
 
-// ====================== pubspec.yaml ======================
-/*
-Replace the entire pubspec.yaml with this:
-*/
+<!-- x-release-please-end -->
 
-name: aether_os
-description: Aether OS with Alejandro AI – Offline Bluetooth mesh + voice kill-switch
-publish_to: 'none'
-version: 1.0.0+1
+The Thern 1 Go library provides convenient access to the Thern 1 REST API
+from applications written in Go.
 
-environment:
-  sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=3.0.0"
+It is generated with [Stainless](https://www.stainless.com/).
 
-dependencies:
-  flutter:
-    sdk: flutter
-  bridgefy: ^1.1.11
-  isar: ^4.0.0
-  isar_flutter_libs: ^4.0.0
-  path_provider: ^2.1.4
-  flutter_riverpod: ^2.5.1
-  http: ^1.2.2
-  speech_to_text: ^6.6.2
+## MCP Server
 
-dev_dependencies:
-  isar_generator: ^4.0.0
-  build_runner: ^2.4.0
+Use the Thern 1 MCP Server to enable AI assistants to interact with this API, allowing them to explore endpoints, make test requests, and use documentation to help integrate this SDK into your application.
 
-flutter:
-  uses-material-design: true
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=thern.1-mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInRoZXJuLjEtbWNwIl0sImVudiI6eyJQRVRTVE9SRV9BUElfS0VZIjoiTXkgQVBJIEtleSJ9fQ)
+[![Install in VS Code](https://img.shields.io/badge/_-Add_to_VS_Code-blue?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMzAuMjM1IDM5Ljg4NGEyLjQ5MSAyLjQ5MSAwIDAgMS0xLjc4MS0uNzNMMTIuNyAyNC43OGwtMy40NiAyLjYyNC0zLjQwNiAyLjU4MmExLjY2NSAxLjY2NSAwIDAgMS0xLjA4Mi4zMzggMS42NjQgMS42NjQgMCAwIDEtMS4wNDYtLjQzMWwtMi4yLTJhMS42NjYgMS42NjYgMCAwIDEgMC0yLjQ2M0w3LjQ1OCAyMCA0LjY3IDE3LjQ1MyAxLjUwNyAxNC41N2ExLjY2NSAxLjY2NSAwIDAgMSAwLTIuNDYzbDIuMi0yYTEuNjY1IDEuNjY1IDAgMCAxIDIuMTMtLjA5N2w2Ljg2MyA1LjIwOUwyOC40NTIuODQ0YTIuNDg4IDIuNDg4IDAgMCAxIDEuODQxLS43MjljLjM1MS4wMDkuNjk5LjA5MSAxLjAxOS4yNDVsOC4yMzYgMy45NjFhMi41IDIuNSAwIDAgMSAxLjQxNSAyLjI1M3YuMDk5LS4wNDVWMzMuMzd2LS4wNDUuMDk1YTIuNTAxIDIuNTAxIDAgMCAxLTEuNDE2IDIuMjU3bC04LjIzNSAzLjk2MWEyLjQ5MiAyLjQ5MiAwIDAgMS0xLjA3Ny4yNDZabS43MTYtMjguOTQ3LTExLjk0OCA5LjA2MiAxMS45NTIgOS4wNjUtLjAwNC0xOC4xMjdaIi8+PC9zdmc+)](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22thern.1-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22thern.1-mcp%22%5D%2C%22env%22%3A%7B%22PETSTORE_API_KEY%22%3A%22My%20API%20Key%22%7D%7D)
 
-// ====================== lib/models/sale.dart ======================
-import 'package:isar/isar.dart';
+> Note: You may need to set environment variables in your MCP client.
 
-part 'sale.g.dart';
+## Installation
 
-@Collection()
-class Sale {
-  Id id = Isar.autoIncrement;
-  final String title;
-  final String price;
-  final DateTime timestamp;
+```go
+import (
+	"github.com/stainless-sdks/thern.1-go" // imported as thern1
+)
+```
 
-  Sale({required this.title, required this.price, required this.timestamp});
+Or to pin the version:
+
+```sh
+go get -u 'github.com/stainless-sdks/thern.1-go@v0.0.1'
+```
+
+## Requirements
+
+This library requires Go 1.22+.
+
+## Usage
+
+The full API of this library can be found in [api.md](api.md).
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+
+	"github.com/stainless-sdks/thern.1-go"
+	"github.com/stainless-sdks/thern.1-go/option"
+)
+
+func main() {
+	client := thern1.NewClient(
+		option.WithAPIKey("My API Key"), // defaults to os.LookupEnv("PETSTORE_API_KEY")
+	)
+	order, err := client.Store.Orders.New(context.TODO(), thern1.StoreOrderNewParams{})
+	if err != nil {
+		panic(err.Error())
+	}
+	fmt.Printf("%+v\n", order.ID)
 }
 
-// ====================== lib/services/bridgefy_service.dart ======================
-import 'dart:convert';
-import 'dart:typed_data';
-import 'package:bridgefy/bridgefy.dart';
-import 'package:flutter/foundation.dart';
+```
 
-class BridgefyService with BridgefyDelegate {
-  final Bridgefy _bridgefy = Bridgefy();
+### Request fields
 
-  Future<void> initialize() async {
-    try {
-      await _bridgefy.initialize(
-        apiKey: "YOUR_BRIDGEFY_API_KEY_HERE", // Get free key at bridgefy.me
-        delegate: this,
-        verboseLogging: true,
-      );
-      await _bridgefy.start();
-      debugPrint("✅ Aether Mesh ONLINE – Alejandro AI connected");
-    } catch (e) {
-      debugPrint("❌ Bridgefy init failed: $e");
-    }
-  }
+The thern1 library uses the [`omitzero`](https://tip.golang.org/doc/go1.24#encodingjsonpkgencodingjson)
+semantics from the Go 1.24+ `encoding/json` release for request fields.
 
-  Future<String> sendLocalSale(String saleText) async {
-    final data = Uint8List.fromList(utf8.encode(saleText));
-    return await _bridgefy.send(
-      data: data,
-      transmissionMode: BridgefyTransmissionMode.broadcast,
-    );
-  }
+Required primitive fields (`int64`, `string`, etc.) feature the tag <code>\`api:"required"\`</code>. These
+fields are always serialized, even their zero values.
 
-  Future<void> stop() async => await _bridgefy.stop();
+Optional primitive types are wrapped in a `param.Opt[T]`. These fields can be set with the provided constructors, `thern1.String(string)`, `thern1.Int(int64)`, etc.
 
-  // All delegate methods
-  @override void bridgefyDidConnect({required String userID}) => debugPrint("🔗 Connected: $userID");
-  @override void bridgefyDidDestroySession() => debugPrint("🗑️ Session destroyed");
-  @override void bridgefyDidDisconnect({required String userID}) => debugPrint("❌ Disconnected: $userID");
-  @override void bridgefyDidEstablishSecureConnection({required String userID}) => debugPrint("🔒 Secure: $userID");
-  @override void bridgefyDidFailSendingMessage({required String messageID, BridgefyError? error}) => debugPrint("❌ Send fail $messageID");
-  @override void bridgefyDidFailToDestroySession() => debugPrint("❌ Destroy session fail");
-  @override void bridgefyDidFailToEstablishSecureConnection({required String userID, required BridgefyError error}) => debugPrint("❌ Secure fail $userID");
-  @override void bridgefyDidFailToStart({required BridgefyError error}) => debugPrint("❌ Start fail");
-  @override void bridgefyDidFailToStop({required BridgefyError error}) => debugPrint("❌ Stop fail");
-  @override void bridgefyDidReceiveData({required Uint8List data, required String messageId, required BridgefyTransmissionMode transmissionMode}) {
-    debugPrint("📥 Mesh received: ${utf8.decode(data)}");
-  }
-  @override void bridgefyDidSendDataProgress({required String messageID, required int position, required int of}) => debugPrint("📤 Progress $messageID");
-  @override void bridgefyDidSendMessage({required String messageID}) => debugPrint("✅ Sent: $messageID");
-  @override void bridgefyDidStart({required String currentUserID}) => debugPrint("🚀 Bridgefy started");
-  @override void bridgefyDidStop() => debugPrint("⏹️ Bridgefy stopped");
+Any `param.Opt[T]`, map, slice, struct or string enum uses the
+tag <code>\`json:"...,omitzero"\`</code>. Its zero value is considered omitted.
+
+The `param.IsOmitted(any)` function can confirm the presence of any `omitzero` field.
+
+```go
+p := thern1.ExampleParams{
+	ID:   "id_xxx",             // required property
+	Name: thern1.String("..."), // optional property
+
+	Point: thern1.Point{
+		X: 0,             // required field will serialize as 0
+		Y: thern1.Int(1), // optional field will serialize as 1
+		// ... omitted non-required fields will not be serialized
+	},
+
+	Origin: thern1.Origin{}, // the zero value of [Origin] is considered omitted
+}
+```
+
+To send `null` instead of a `param.Opt[T]`, use `param.Null[T]()`.
+To send `null` instead of a struct `T`, use `param.NullStruct[T]()`.
+
+```go
+p.Name = param.Null[string]()       // 'null' instead of string
+p.Point = param.NullStruct[Point]() // 'null' instead of struct
+
+param.IsNull(p.Name)  // true
+param.IsNull(p.Point) // true
+```
+
+Request structs contain a `.SetExtraFields(map[string]any)` method which can send non-conforming
+fields in the request body. Extra fields overwrite any struct fields with a matching
+key. For security reasons, only use `SetExtraFields` with trusted data.
+
+To send a custom value instead of a struct, use `param.Override[T](value)`.
+
+```go
+// In cases where the API specifies a given type,
+// but you want to send something else, use [SetExtraFields]:
+p.SetExtraFields(map[string]any{
+	"x": 0.01, // send "x" as a float instead of int
+})
+
+// Send a number instead of an object
+custom := param.Override[thern1.FooParams](12)
+```
+
+### Request unions
+
+Unions are represented as a struct with fields prefixed by "Of" for each of its variants,
+only one field can be non-zero. The non-zero field will be serialized.
+
+Sub-properties of the union can be accessed via methods on the union struct.
+These methods return a mutable pointer to the underlying data, if present.
+
+```go
+// Only one field can be non-zero, use param.IsOmitted() to check if a field is set
+type AnimalUnionParam struct {
+	OfCat *Cat `json:",omitzero,inline`
+	OfDog *Dog `json:",omitzero,inline`
 }
 
-// ====================== lib/providers.dart ======================
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:isar/isar.dart';
-import 'package:path_provider/path_provider.dart';
-import 'models/sale.dart';
-import 'services/bridgefy_service.dart';
-import 'package:speech_to_text/speech_to_text.dart' as stt;
-
-final isarProvider = FutureProvider<Isar>((ref) async {
-  final dir = await getApplicationDocumentsDirectory();
-  return Isar.open([SaleSchema], directory: dir.path);
-});
-
-final bridgefyProvider = Provider<BridgefyService>((ref) => BridgefyService());
-
-final speechProvider = Provider<stt.SpeechToText>((ref) => stt.SpeechToText());
-
-// ====================== lib/main.dart ======================
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'home_screen.dart';
-
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(const ProviderScope(child: AetherOS()));
+animal := AnimalUnionParam{
+	OfCat: &Cat{
+		Name: "Whiskers",
+		Owner: PersonParam{
+			Address: AddressParam{Street: "3333 Coyote Hill Rd", Zip: 0},
+		},
+	},
 }
 
-class AetherOS extends StatelessWidget {
-  const AetherOS({super.key});
+// Mutating a field
+if address := animal.GetOwner().GetAddress(); address != nil {
+	address.ZipCode = 94304
+}
+```
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Aether OS',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color(0xFF0A0A0A),
-        textTheme: const TextTheme(bodyMedium: TextStyle(fontFamily: 'Courier New', color: Colors.white)),
-      ),
-      home: const HomeScreen(),
-    );
-  }
+### Response objects
+
+All fields in response structs are ordinary value types (not pointers or wrappers).
+Response structs also include a special `JSON` field containing metadata about
+each property.
+
+```go
+type Animal struct {
+	Name   string `json:"name,nullable"`
+	Owners int    `json:"owners"`
+	Age    int    `json:"age"`
+	JSON   struct {
+		Name        respjson.Field
+		Owner       respjson.Field
+		Age         respjson.Field
+		ExtraFields map[string]respjson.Field
+	} `json:"-"`
+}
+```
+
+To handle optional data, use the `.Valid()` method on the JSON field.
+`.Valid()` returns true if a field is not `null`, not present, or couldn't be marshaled.
+
+If `.Valid()` is false, the corresponding field will simply be its zero value.
+
+```go
+raw := `{"owners": 1, "name": null}`
+
+var res Animal
+json.Unmarshal([]byte(raw), &res)
+
+// Accessing regular fields
+
+res.Owners // 1
+res.Name   // ""
+res.Age    // 0
+
+// Optional field checks
+
+res.JSON.Owners.Valid() // true
+res.JSON.Name.Valid()   // false
+res.JSON.Age.Valid()    // false
+
+// Raw JSON values
+
+res.JSON.Owners.Raw()                  // "1"
+res.JSON.Name.Raw() == "null"          // true
+res.JSON.Name.Raw() == respjson.Null   // true
+res.JSON.Age.Raw() == ""               // true
+res.JSON.Age.Raw() == respjson.Omitted // true
+```
+
+These `.JSON` structs also include an `ExtraFields` map containing
+any properties in the json response that were not specified
+in the struct. This can be useful for API features not yet
+present in the SDK.
+
+```go
+body := res.JSON.ExtraFields["my_unexpected_field"].Raw()
+```
+
+### Response Unions
+
+In responses, unions are represented by a flattened struct containing all possible fields from each of the
+object variants.
+To convert it to a variant use the `.AsFooVariant()` method or the `.AsAny()` method if present.
+
+If a response value union contains primitive values, primitive fields will be alongside
+the properties but prefixed with `Of` and feature the tag `json:"...,inline"`.
+
+```go
+type AnimalUnion struct {
+	// From variants [Dog], [Cat]
+	Owner Person `json:"owner"`
+	// From variant [Dog]
+	DogBreed string `json:"dog_breed"`
+	// From variant [Cat]
+	CatBreed string `json:"cat_breed"`
+	// ...
+
+	JSON struct {
+		Owner respjson.Field
+		// ...
+	} `json:"-"`
 }
 
-// ====================== lib/home_screen.dart ======================
-import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:speech_to_text/speech_to_text.dart' as stt;
-import 'package:http/http.dart' as http;
-import 'providers.dart';
-import 'services/bridgefy_service.dart';
-
-class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({super.key});
-
-  @override
-  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+// If animal variant
+if animal.Owner.Address.ZipCode == "" {
+	panic("missing zip code")
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen> {
-  final stt.SpeechToText _speech = stt.SpeechToText();
-  bool _isListening = false;
-  String _status = "MESH ONLINE • ALEJANDRO AI ACTIVE";
-  String _lastMessage = "";
+// Switch on the variant
+switch variant := animal.AsAny().(type) {
+case Dog:
+case Cat:
+default:
+	panic("unexpected type")
+}
+```
 
-  @override
-  void initState() {
-    super.initState();
-    ref.read(bridgefyProvider).initialize();
-  }
+### RequestOptions
 
-  Future<void> _sendLocalSale() async {
-    final bridgefy = ref.read(bridgefyProvider);
-    final msgId = await bridgefy.sendLocalSale("SALE: Peridot Batch A - \$500");
-    setState(() => _lastMessage = "Broadcasted! ID: $msgId");
-    if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_lastMessage)));
-  }
+This library uses the functional options pattern. Functions defined in the
+`option` package return a `RequestOption`, which is a closure that mutates a
+`RequestConfig`. These options can be supplied to the client or at individual
+requests. For example:
 
-  Future<void> _toggleVoice() async {
-    if (!_isListening) {
-      final available = await _speech.initialize();
-      if (available) {
-        setState(() => _isListening = true);
-        await _speech.listen(onResult: (result) async {
-          final words = result.recognizedWords.toLowerCase();
-          if (words.contains("system freeze 7.3")) {
-            await _killSwitch();
-          } else if (mounted) {
-            setState(() => _lastMessage = "Heard: ${result.recognizedWords}");
-          }
-        });
-      }
-    } else {
-      await _speech.stop();
-      setState(() => _isListening = false);
-    }
-  }
+```go
+client := thern1.NewClient(
+	// Adds a header to every request made by the client
+	option.WithHeader("X-Some-Header", "custom_header_info"),
+)
 
-  Future<void> _killSwitch() async {
-    final isar = await ref.read(isarProvider.future);
-    await isar.clear();
-    await ref.read(bridgefyProvider).stop();
-    setState(() => _status = "SYSTEM PURGED • SHUTTING DOWN");
-    if (Platform.isAndroid) exit(0);
-    SystemNavigator.pop();
-  }
+client.Store.ListInventory(context.TODO(), ...,
+	// Override the header
+	option.WithHeader("X-Some-Header", "some_other_custom_header_info"),
+	// Add an undocumented field to the request body, using sjson syntax
+	option.WithJSONSet("some.json.path", map[string]string{"my": "object"}),
+)
+```
 
-  Future<void> _callAlejandroAI() async {
-    try {
-      final res = await http.post(
-        Uri.parse("http://10.0.2.2:8000/command"), // ← Change to your deployed backend URL
-        headers: {"Content-Type": "application/json"},
-        body: '{"user_input": "Activate full Alejandro AI mode"}',
-      );
-      setState(() => _lastMessage = "Alejandro AI: ${res.body}");
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_lastMessage)));
-    } catch (e) {
-      setState(() => _lastMessage = "Alejandro AI running locally (offline)");
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Backend offline – Alejandro AI local")));
-    }
-  }
+The request option `option.WithDebugLog(nil)` may be helpful while debugging.
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [Color(0xFF0A0A0A), Color(0xFF1F1F1F)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-        ),
-        child: Center(
-          child: Container(
-            width: double.infinity,
-            margin: const EdgeInsets.all(32),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(colors: [Color(0xFF2E2E2E), Color(0xFFBDBDBD), Color(0xFF2E2E2E)], begin: Alignment.topLeft, end: Alignment.bottomRight),
-              border: Border.all(color: Colors.white30, width: 3.5),
-              borderRadius: BorderRadius.circular(28),
-              boxShadow: [
-                BoxShadow(color: Colors.cyan.withOpacity(0.4), blurRadius: 80, spreadRadius: 15),
-                BoxShadow(color: Colors.white.withOpacity(0.1), blurRadius: 40, spreadRadius: 5),
-              ],
-            ),
-            padding: const EdgeInsets.all(52),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(Icons.shield_outlined, size: 110, color: Colors.white70),
-                const SizedBox(height: 20),
-                const Text("AETHER OS", style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900, letterSpacing: 8, color: Colors.white)),
-                Text(_status, style: const TextStyle(fontSize: 19, color: Colors.greenAccent, letterSpacing: 4)),
-                const SizedBox(height: 8),
-                const Text("Powered by Alejandro AI", style: TextStyle(fontSize: 15, color: Colors.white60)),
-                const SizedBox(height: 40),
+See the [full list of request options](https://pkg.go.dev/github.com/stainless-sdks/thern.1-go/option).
 
-                ElevatedButton.icon(
-                  onPressed: _sendLocalSale,
-                  icon: const Icon(Icons.bluetooth, size: 28),
-                  label: const Text("BROADCAST LOCAL SALE", style: TextStyle(fontSize: 17)),
-                  style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18), backgroundColor: Colors.white10),
-                ),
-                const SizedBox(height: 16),
+### Pagination
 
-                ElevatedButton.icon(
-                  onPressed: _toggleVoice,
-                  icon: Icon(_isListening ? Icons.mic_off : Icons.mic, size: 28),
-                  label: Text(_isListening ? "STOP LISTENING" : "VOICE KILL-SWITCH", style: const TextStyle(fontSize: 17)),
-                  style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18), backgroundColor: Colors.white10),
-                ),
-                const SizedBox(height: 16),
+This library provides some conveniences for working with paginated list endpoints.
 
-                ElevatedButton.icon(
-                  onPressed: _callAlejandroAI,
-                  icon: const Icon(Icons.cloud, size: 28),
-                  label: const Text("CALL ALEJANDRO AI", style: TextStyle(fontSize: 17)),
-                  style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18), backgroundColor: Colors.white10),
-                ),
+You can use `.ListAutoPaging()` methods to iterate through items across all pages:
 
-                const SizedBox(height: 48),
-                if (_lastMessage.isNotEmpty)
-                  Text(_lastMessage, style: const TextStyle(fontSize: 15, color: Colors.white70), textAlign: TextAlign.center),
-                const SizedBox(height: 20),
-                const Text(
-                  "Say “System Freeze 7.3” to purge all data & exit",
-                  style: TextStyle(fontSize: 14, color: Colors.white54, fontStyle: FontStyle.italic),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+Or you can use simple `.List()` methods to fetch a single page and receive a standard response object
+with additional helper methods like `.GetNextPage()`, e.g.:
+
+### Errors
+
+When the API returns a non-success status code, we return an error with type
+`*thern1.Error`. This contains the `StatusCode`, `*http.Request`, and
+`*http.Response` values of the request, as well as the JSON of the error body
+(much like other response objects in the SDK).
+
+To handle errors, we recommend that you use the `errors.As` pattern:
+
+```go
+_, err := client.Store.ListInventory(context.TODO())
+if err != nil {
+	var apierr *thern1.Error
+	if errors.As(err, &apierr) {
+		println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
+		println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
+	}
+	panic(err.Error()) // GET "/store/inventory": 400 Bad Request { ... }
+}
+```
+
+When other errors occur, they are returned unwrapped; for example,
+if HTTP transport fails, you might receive `*url.Error` wrapping `*net.OpError`.
+
+### Timeouts
+
+Requests do not time out by default; use context to configure a timeout for a request lifecycle.
+
+Note that if a request is [retried](#retries), the context timeout does not start over.
+To set a per-retry timeout, use `option.WithRequestTimeout()`.
+
+```go
+// This sets the timeout for the request, including all the retries.
+ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
+defer cancel()
+client.Store.ListInventory(
+	ctx,
+	// This sets the per-retry timeout
+	option.WithRequestTimeout(20*time.Second),
+)
+```
+
+### File uploads
+
+Request parameters that correspond to file uploads in multipart requests are typed as
+`io.Reader`. The contents of the `io.Reader` will by default be sent as a multipart form
+part with the file name of "anonymous_file" and content-type of "application/octet-stream".
+
+The file name and content-type can be customized by implementing `Name() string` or `ContentType()
+string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a
+file returned by `os.Open` will be sent with the file name on disk.
+
+We also provide a helper `thern1.File(reader io.Reader, filename string, contentType string)`
+which can be used to wrap any `io.Reader` with the appropriate file name and content type.
+
+### Retries
+
+Certain errors will be automatically retried 2 times by default, with a short exponential backoff.
+We retry by default all connection errors, 408 Request Timeout, 409 Conflict, 429 Rate Limit,
+and >=500 Internal errors.
+
+You can use the `WithMaxRetries` option to configure or disable this:
+
+```go
+// Configure the default for all requests:
+client := thern1.NewClient(
+	option.WithMaxRetries(0), // default is 2
+)
+
+// Override per-request:
+client.Store.ListInventory(context.TODO(), option.WithMaxRetries(5))
+```
+
+### Accessing raw response data (e.g. response headers)
+
+You can access the raw HTTP response data by using the `option.WithResponseInto()` request option. This is useful when
+you need to examine response headers, status codes, or other details.
+
+```go
+// Create a variable to store the HTTP response
+var response *http.Response
+response, err := client.Store.ListInventory(context.TODO(), option.WithResponseInto(&response))
+if err != nil {
+	// handle error
+}
+fmt.Printf("%+v\n", response)
+
+fmt.Printf("Status Code: %d\n", response.StatusCode)
+fmt.Printf("Headers: %+#v\n", response.Header)
+```
+
+### Making custom/undocumented requests
+
+This library is typed for convenient access to the documented API. If you need to access undocumented
+endpoints, params, or response properties, the library can still be used.
+
+#### Undocumented endpoints
+
+To make requests to undocumented endpoints, you can use `client.Get`, `client.Post`, and other HTTP verbs.
+`RequestOptions` on the client, such as retries, will be respected when making these requests.
+
+```go
+var (
+    // params can be an io.Reader, a []byte, an encoding/json serializable object,
+    // or a "…Params" struct defined in this library.
+    params map[string]any
+
+    // result can be an []byte, *http.Response, a encoding/json deserializable object,
+    // or a model defined in this library.
+    result *http.Response
+)
+err := client.Post(context.Background(), "/unspecified", params, &result)
+if err != nil {
+    …
+}
+```
+
+#### Undocumented request params
+
+To make requests using undocumented parameters, you may use either the `option.WithQuerySet()`
+or the `option.WithJSONSet()` methods.
+
+```go
+params := FooNewParams{
+    ID:   "id_xxxx",
+    Data: FooNewParamsData{
+        FirstName: thern1.String("John"),
+    },
+}
+client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name", "Doe"))
+```
+
+#### Undocumented response properties
+
+To access undocumented response properties, you may either access the raw JSON of the response as a string
+with `result.JSON.RawJSON()`, or get the raw JSON of a particular field on the result with
+`result.JSON.Foo.Raw()`.
+
+Any fields that are not present on the response struct will be saved and can be accessed by `result.JSON.ExtraFields()` which returns the extra fields as a `map[string]Field`.
+
+### Middleware
+
+We provide `option.WithMiddleware` which applies the given
+middleware to requests.
+
+```go
+func Logger(req *http.Request, next option.MiddlewareNext) (res *http.Response, err error) {
+	// Before the request
+	start := time.Now()
+	LogReq(req)
+
+	// Forward the request to the next handler
+	res, err = next(req)
+
+	// Handle stuff after the request
+	end := time.Now()
+	LogRes(res, err, start - end)
+
+    return res, err
 }
 
-// ====================== Backend (main.py) ======================
-// Create this file in the root of your project (same level as pubspec.yaml)
+client := thern1.NewClient(
+	option.WithMiddleware(Logger),
+)
+```
 
-from fastapi import FastAPI
-from pydantic import BaseModel
-import time
+When multiple middlewares are provided as variadic arguments, the middlewares
+are applied left to right. If `option.WithMiddleware` is given
+multiple times, for example first in the client then the method, the
+middleware in the client will run first and the middleware given in the method
+will run next.
 
-app = FastAPI(title="Aether OS Backend – Powered by Alejandro AI")
+You may also replace the default `http.Client` with
+`option.WithHTTPClient(client)`. Only one http client is
+accepted (this overwrites any previous client) and receives requests after any
+middleware has been applied.
 
-class CommandRequest(BaseModel):
-    user_input: str
+## Semantic versioning
 
-@app.post("/command")
-async def process_command(request: CommandRequest):
-    response = f"🌀 Alejandro AI: {request.user_input} → EXECUTED WITH PRECISION"
-    return {
-        "response": response,
-        "status": "active",
-        "timestamp": time.time()
-    }
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
 
-# Run with: uvicorn main:app --reload --port 8000
+1. Changes to library internals which are technically public but not intended or documented for external use. _(Please open a GitHub issue to let us know if you are relying on such internals.)_
+2. Changes that we do not expect to impact the vast majority of users in practice.
 
-// ====================== NEXT STEPS ======================
-/*
-After pasting all files:
+We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-1. Replace "YOUR_BRIDGEFY_API_KEY_HERE" with your real Bridgefy key
-2. Run:
-   flutter pub get
-   flutter pub run build_runner build --delete-conflicting-outputs
-   flutter run
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/thern.1-go/issues) with questions, bugs, or suggestions.
 
-3. For backend: Deploy main.py on Render.com or Railway, then update the URL in _callAlejandroAI()
+## Contributing
 
-This is the complete, clean, beautiful single copy-paste version.
-No mistakes. Stainless-steel cyber UI. Offline mesh. Voice kill-switch. Ready for launch.
-*/
+See [the contributing documentation](./CONTRIBUTING.md).
