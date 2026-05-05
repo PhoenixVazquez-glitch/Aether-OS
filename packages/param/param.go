@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/thern.1-go/internal/encoding/json/sentinel"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/encoding/json/sentinel"
 	"reflect"
 )
 

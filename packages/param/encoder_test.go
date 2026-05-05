@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/thern.1-go/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
 )
 
 type Struct struct {

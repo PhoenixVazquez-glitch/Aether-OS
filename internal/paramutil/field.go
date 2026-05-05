@@ -1,8 +1,8 @@
 package paramutil
 
 import (
-	"github.com/stainless-sdks/thern.1-go/packages/param"
-	"github.com/stainless-sdks/thern.1-go/packages/respjson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/respjson"
 )
 
 func AddrIfPresent[T comparable](v param.Opt[T]) *T {

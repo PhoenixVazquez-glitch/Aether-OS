@@ -3,9 +3,9 @@
 package thern1
 
 import (
-	"github.com/stainless-sdks/thern.1-go/internal/apierror"
-	"github.com/stainless-sdks/thern.1-go/packages/param"
-	"github.com/stainless-sdks/thern.1-go/shared"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apierror"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/shared"
 )
 
 // aliased to make [param.APIUnion] private when embedding

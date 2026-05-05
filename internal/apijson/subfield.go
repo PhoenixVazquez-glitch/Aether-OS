@@ -1,7 +1,7 @@
 package apijson
 
 import (
-	"github.com/stainless-sdks/thern.1-go/packages/respjson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/respjson"
 	"reflect"
 )
 

@@ -3,7 +3,7 @@ package param
 import (
 	"encoding/json"
 	"fmt"
-	shimjson "github.com/stainless-sdks/thern.1-go/internal/encoding/json"
+	shimjson "github.com/PhoenixVazquez-glitch/Aether-OS/internal/encoding/json"
 	"time"
 )
 

@@ -11,13 +11,13 @@ import (
 	"net/url"
 	"slices"
 
-	"github.com/stainless-sdks/thern.1-go/internal/apijson"
-	"github.com/stainless-sdks/thern.1-go/internal/apiquery"
-	shimjson "github.com/stainless-sdks/thern.1-go/internal/encoding/json"
-	"github.com/stainless-sdks/thern.1-go/internal/requestconfig"
-	"github.com/stainless-sdks/thern.1-go/option"
-	"github.com/stainless-sdks/thern.1-go/packages/param"
-	"github.com/stainless-sdks/thern.1-go/packages/respjson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apijson"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/apiquery"
+	shimjson "github.com/PhoenixVazquez-glitch/Aether-OS/internal/encoding/json"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/requestconfig"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/option"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/respjson"
 )
 
 // Operations about user

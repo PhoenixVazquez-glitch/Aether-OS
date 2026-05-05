@@ -1,8 +1,8 @@
 package sentinel_test
 
 import (
-	"github.com/stainless-sdks/thern.1-go/internal/encoding/json/sentinel"
-	"github.com/stainless-sdks/thern.1-go/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/encoding/json/sentinel"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
 	"reflect"
 	"slices"
 	"testing"

@@ -14,7 +14,7 @@ import (
 	"encoding"
 	"encoding/base64"
 	"fmt"
-	"github.com/stainless-sdks/thern.1-go/internal/encoding/json/shims"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/encoding/json/shims"
 	"reflect"
 	"strconv"
 	"strings"

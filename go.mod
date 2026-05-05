@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/thern.1-go
+module github.com/PhoenixVazquez-glitch/Aether-OS
 
 go 1.22
 

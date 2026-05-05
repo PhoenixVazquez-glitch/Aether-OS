@@ -10,9 +10,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/thern.1-go"
-	"github.com/stainless-sdks/thern.1-go/internal/testutil"
-	"github.com/stainless-sdks/thern.1-go/option"
+	"github.com/PhoenixVazquez-glitch/Aether-OS"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/testutil"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/option"
 )
 
 func TestPetNewWithOptionalParams(t *testing.T) {

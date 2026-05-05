@@ -7,7 +7,7 @@ package apijson
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/thern.1-go/packages/param"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/packages/param"
 	"reflect"
 	"strconv"
 	"sync"

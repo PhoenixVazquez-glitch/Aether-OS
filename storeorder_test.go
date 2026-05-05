@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/thern.1-go"
-	"github.com/stainless-sdks/thern.1-go/internal/testutil"
-	"github.com/stainless-sdks/thern.1-go/option"
-	"github.com/stainless-sdks/thern.1-go/shared"
+	"github.com/PhoenixVazquez-glitch/Aether-OS"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/internal/testutil"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/option"
+	"github.com/PhoenixVazquez-glitch/Aether-OS/shared"
 )
 
 func TestStoreOrderNewWithOptionalParams(t *testing.T) {
